@@ -72,6 +72,7 @@ func cmdAdd(args *skel.CmdArgs) error {
 		return fmt.Errorf("failed to open netns %q: %v", netns, err)
 	}
 	defer netns.Close()
+	netConf.Netns = args.Netns
 
 	sm := sriov.NewSriovManager()
 	if err := sm.ApplyVFConfig(netConf); err != nil {

@@ -49,4 +49,5 @@ type NetConf struct {
 	RuntimeConfig struct {
 		Mac string `json:"mac,omitempty"`
 	} `json:"runtimeConfig,omitempty"`
+	Netns string `json:"netns"`
 }
